@@ -1,0 +1,37 @@
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Bodies</title>
+</head>
+<body>
+    <h1>Hasaan</h1>
+    <ul>
+        {% for n in body %}
+            <li>
+                {{ n.id }} 
+                <!-- Assuming 'n' is the string representation of the Body object -->
+                <a href="{% url 'body' %}{{n.id}}">View Details</a>  <!-- Dynamic URL -->
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bodies</title>
+</head>
+<body>
+    <h1>Hasaan</h1>
+    <ul>
+        {% for n in body %}
+            <li>
+                {{ n.id }} 
+                <!-- Assuming 'n' is the string representation of the Body object -->
+                <a href="{% url 'body' n.id %}">View Details</a>  <!-- Correct Dynamic URL -->
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

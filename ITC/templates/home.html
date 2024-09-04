@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Hasaan</h1>
+    {% for n in home %}
+        <h2>{{ n.about }}</h2>
+    {% endfor %}
+
+    <a href="{% url 'bodies' %}">BODIES</a>
+</body>
+</html>
